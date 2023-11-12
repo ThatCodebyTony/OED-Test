@@ -112,7 +112,7 @@ mocha.describe('readings API', () => {
                 // Tony: Hi team, this is the part we wanna focus on.
                 // If you would like more details, let me know and I can walk you through everything.
 
-                // I am deleting the code as a test.
+                // Testing commits and pull requests.
 
                                 // Tony: Copied the previous tests (B1, B2, B3, B4) and adjusted parameters to test for B12.
                 // Tony: Changed the path of "const expected = await parseExpectedCsv" to the B12 csv file.
