@@ -112,7 +112,9 @@ mocha.describe('readings API', () => {
                 // Tony: Hi team, this is the part we wanna focus on.
                 // If you would like more details, let me know and I can walk you through everything.
 
-                // Tony: Copied the previous tests (B1, B2, B3, B4) and adjusted parameters to test for B12.
+                // I am deleting the code as a test.
+
+                                // Tony: Copied the previous tests (B1, B2, B3, B4) and adjusted parameters to test for B12.
                 // Tony: Changed the path of "const expected = await parseExpectedCsv" to the B12 csv file.
                 // Tony: Changed mocha.it to describe the time interval, period, and "graphic unit" being tested.
                     // Tony: While B1-to-B4 test for kWh as kWh, B12 tests for kg of CO₂.
@@ -137,6 +139,8 @@ mocha.describe('readings API', () => {
                     // Check that the API reading is equal to what it is expected to equal
                     expectReadingToEqualExpected(res, expected);
                 });
+                
+
                 
                 // Add B13 here
 
