@@ -8,5 +8,5 @@ Feel free to Dm me via slack if you need help with anything.
 
 3 - B12 is "readings_ri_15_days_76.csv" 
 
-4 - I uploaded both "readings_ri_15_days_76.csv" and "README.md" from the DesignDoc.
+4 - I uploaded both "readings_ri_15_days_76.csv" and "README.md" in the DesignDoc folder.
  
