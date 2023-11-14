@@ -207,16 +207,8 @@ async function insertStandardUnits(conn) {
 			suffix: 'CO₂', displayable: Unit.displayableType.ALL, 
 			preferredDisplay: false, 
 			note: 'special unit'
-		},
-
-		{ // C12
-			sourceName: 'kg CO₂', 
-			destinationName: 'kg', 
-			bidirectional: false, 
-			slope: 1, 
-			intercept: 0, 
-			note: 'CO₂ → kg'
 		}
+
 	];
 
 	await insertUnits(standardUnits, false, conn);
@@ -306,6 +298,15 @@ async function insertStandardConversions(conn) {
 			slope: 1,
 			intercept: 0,
 			note: 'OED created  for meters Electric_Utility → kWh'
+		},
+		// Tony: added conversions. 
+		{ // C12
+			sourceName: 'kg CO₂', 
+			destinationName: 'kg', 
+			bidirectional: false, 
+			slope: 1, 
+			intercept: 0, 
+			note: 'CO₂ → kg'
 		}
 	];
 
