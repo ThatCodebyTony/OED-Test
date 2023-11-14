@@ -174,6 +174,49 @@ async function insertStandardUnits(conn) {
 			preferredDisplay: false,
 			note: 'OED created meter unit'
 		},
+		// Tony: Added units from DesignDocs
+		{ 	// U10
+			name: 'kg', 
+			identifier: '', 
+			unitRepresent: Unit.unitRepresentType.QUANTITY, 
+			secInRate: 3600, 
+			typeOfUnit: Unit.unitType.UNIT, 
+			suffix: '', 
+			displayable: Unit.displayableType.ALL, 
+			preferredDisplay: false, 
+			note: 'OED created standard unit' 
+		},
+
+		{ // U11
+			
+			name: 'metric ton', 
+			identifier: '', 
+			unitRepresent: Unit.unitRepresentType.QUANTITY, 
+			secInRate: 3600, 
+			typeOfUnit: Unit.unitType.UNIT, 
+			suffix: '', displayable: Unit.displayableType.ALL, 
+			preferredDisplay: false, 
+			note: 'OED created standard unit' 
+		},
+
+		{ 	// U12
+			name: 'kg CO₂', 
+			identifier: '', 
+			unitRepresent: Unit.unitRepresentType.QUANTITY, 
+			secInRate: 3600, typeOfUnit: Unit.unitType.UNIT, 
+			suffix: 'CO₂', displayable: Unit.displayableType.ALL, 
+			preferredDisplay: false, 
+			note: 'special unit'
+		},
+
+		{ // C12
+			sourceName: 'kg CO₂', 
+			destinationName: 'kg', 
+			bidirectional: false, 
+			slope: 1, 
+			intercept: 0, 
+			note: 'CO₂ → kg'
+		}
 	];
 
 	await insertUnits(standardUnits, false, conn);
