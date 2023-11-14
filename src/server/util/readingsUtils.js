@@ -212,6 +212,54 @@ const meterDatakWh = [
     }
 ];
 
+// Tony: These units and conversions are added from the DesignDocs.
+const unitDataKg = [
+    {
+        name: 'kg',
+        identifier: '',
+        unitRepresent: Unit.unitRepresentType.QUANTITY,
+        secInRate: 3600,
+        typeOfUnit: Unit.unitType.UNIT,
+        suffix: '',
+        displayable: Unit.displayableType.ALL,
+        preferredDisplay: false,
+        note: 'OED created standard unit'
+    },
+    {
+        name: 'kg CO₂',
+        identifier: '',
+        unitRepresent: Unit.unitRepresentType.QUANTITY,
+        secInRate: 3600,
+        typeOfUnit: Unit.unitType.UNIT,
+        suffix: 'CO₂',
+        displayable: Unit.displayableType.ALL,
+        preferredDisplay: false,
+        note: 'special unit'
+    },
+    {
+        name: 'metric ton',
+        identifier: '',
+        unitRepresent: Unit.unitRepresentType.QUANTITY,
+        secInRate: 3600,
+        typeOfUnit: Unit.unitType.UNIT,
+        suffix: '',
+        displayable: Unit.displayableType.ALL,
+        preferredDisplay: false,
+        note: 'OED created standard unit'
+    }
+];
+
+const conversionDataKg = [
+    {
+        sourceName: 'kg CO₂',
+        destinationName: 'kg',
+        bidirectional: false,
+        slope: 1,
+        intercept: 0,
+        note: 'CO₂ → kg'
+    }
+];
+
 module.exports = {
     prepareTest,
     parseExpectedCsv,
@@ -227,4 +275,7 @@ module.exports = {
     unitDatakWh,
     conversionDatakWh,
     meterDatakWh
+	// Tony: Added the following unit and conversion data for handling new units and conversions.
+    unitDataKg, // New unit data for kilograms
+    conversionDataKg, // New conversion data for kilograms and CO₂
 };
