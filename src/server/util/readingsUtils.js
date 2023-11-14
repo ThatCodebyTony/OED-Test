@@ -274,8 +274,8 @@ module.exports = {
     HTTP_CODE,
     unitDatakWh,
     conversionDatakWh,
-    meterDatakWh
-	// Tony: Added the following unit and conversion data for handling new units and conversions.
+    meterDatakWh,
+    // Tony: Added the following unit and conversion data for handling new units and conversions.
     unitDataKg, // New unit data for kilograms
     conversionDataKg, // New conversion data for kilograms and CO₂
 };
