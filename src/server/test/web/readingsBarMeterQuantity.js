@@ -123,14 +123,14 @@ mocha.describe('readings API', () => {
                 // Tony: "barWidthDays:" for B1-to-B4 seems to reflect the amount of days, so I put 75 for B12.
                 // Arthur: I think the "barWidthDays:" should be 1, if you look on the testing.md doc for B12, the description states 1 day bars for 15 minute intervals
                 // Arthur: If you go to test B1-B4 you can see the barWidthDays values correspond with the number stated in each of the descriptions 
- 
+                
                < mocha.it('B12: Testing 15-minute interval readings over a 75-day period for consistency and accuracy in kg of CO₂ units.', async () => {
                     // Load the data into the database
                     await prepareTest(unitDatakWh, conversionDatakWh, meterDatakWh);
                     // Get the unit ID since the DB could use any value.
                     const unitId = await getUnitId('Electric_Utility');
                     // Load the expected response data from the corresponding csv file
-                    const expected = await parseExpectedCsv('src/server/test/web/readingsData/readings_ri_15_days_75.csv');
+                    const expected = await parseExpectedCsv('src/server/test/web/readingsData/expected_bar_ri_15_mu_kWh_gu_kgCO2_st_-inf_et_inf_bd_1.csv');
                     // Create a request to the API with specific parameters for B12 and save the response
                     const res = await chai.request(app).get(`/api/unitReadings/bar/meters/${METER_ID}`)
                         .query({
