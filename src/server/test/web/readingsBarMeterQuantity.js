@@ -121,8 +121,10 @@ mocha.describe('readings API', () => {
                     // Tony: B1-to-B4's line "const unitId = await getUnitId('kWh');", I changed it to "const unitId = await getUnitId('kgCO2');" for B12 at line 124.
                         // Tony ISSUE: I don't know that is correct.
                 // Tony: "barWidthDays:" for B1-to-B4 seems to reflect the amount of days, so I put 75 for B12.
+                // Arthur: I think the "barWidthDays:" should be 1, if you look on the testing.md doc for B12, the description states 1 day bars for 15 minute intervals
+                // Arthur: If you go to test B1-B4 you can see the barWidthDays values correspond with the number stated in each of the descriptions 
  
-                mocha.it('B12: Testing 15-minute interval readings over a 75-day period for consistency and accuracy in kg of CO₂ units.', async () => {
+               < mocha.it('B12: Testing 15-minute interval readings over a 75-day period for consistency and accuracy in kg of CO₂ units.', async () => {
                     // Load the data into the database
                     await prepareTest(unitDatakWh, conversionDatakWh, meterDatakWh);
                     // Get the unit ID since the DB could use any value.
@@ -133,7 +135,7 @@ mocha.describe('readings API', () => {
                     const res = await chai.request(app).get(`/api/unitReadings/bar/meters/${METER_ID}`)
                         .query({
                             timeInterval: ETERNITY.toString(), // Replace with the specific time interval for B12
-                            barWidthDays: 75, // Replace with the specific bar width for B12
+                            barWidthDays: 1, // Replace with the specific bar width for B12
                             graphicUnitId: unitId
                         });
                     // Check that the API reading is equal to what it is expected to equal
