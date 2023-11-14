@@ -128,7 +128,7 @@ mocha.describe('readings API', () => {
                     // Load the data into the database
                     await prepareTest(unitDatakWh, conversionDatakWh, meterDatakWh);
                     // Get the unit ID since the DB could use any value.
-                    const unitId = await getUnitId('kgCO2');
+                    const unitId = await getUnitId('Electric_Utility');
                     // Load the expected response data from the corresponding csv file
                     const expected = await parseExpectedCsv('src/server/test/web/readingsData/readings_ri_15_days_75.csv');
                     // Create a request to the API with specific parameters for B12 and save the response
