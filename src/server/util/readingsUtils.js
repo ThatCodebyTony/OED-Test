@@ -211,10 +211,9 @@ const meterDatakWh = [
         id: METER_ID
     }
 ];
-
 // Tony: These units and conversions are added from the DesignDocs.
-const unitDataKg = [
-    {
+const unitDataCO2 = [
+    {   // U10
         name: 'kg',
         identifier: '',
         unitRepresent: Unit.unitRepresentType.QUANTITY,
@@ -225,7 +224,7 @@ const unitDataKg = [
         preferredDisplay: false,
         note: 'OED created standard unit'
     },
-    {
+    {   // U11
         name: 'kg CO₂',
         identifier: '',
         unitRepresent: Unit.unitRepresentType.QUANTITY,
@@ -236,7 +235,7 @@ const unitDataKg = [
         preferredDisplay: false,
         note: 'special unit'
     },
-    {
+    {   // U12
         name: 'metric ton',
         identifier: '',
         unitRepresent: Unit.unitRepresentType.QUANTITY,
@@ -249,14 +248,44 @@ const unitDataKg = [
     }
 ];
 
-const conversionDataKg = [
-    {
+const conversionDataCO2 = [
+    {   // C11
         sourceName: 'kg CO₂',
         destinationName: 'kg',
         bidirectional: false,
         slope: 1,
         intercept: 0,
         note: 'CO₂ → kg'
+    },
+	{   // C12
+		sourceName: 'Electric_Utility', 
+		destinationName: 'kg CO₂', 
+		bidirectional: false, 
+		slope: 0.709, 
+        intercept: 0, 
+		note: 'Electric_Utility → kg CO₂'
+	}
+];
+
+const meterDataCO2 = [
+    {   // Tony: 
+        // `meterDataKg` is an array of objects representing meters that measure readings in new units (e.g., kg, kg CO₂, metric ton).
+        // Each object in this array contains details about a specific meter, including its name, the unit it measures in,
+        // the preferred unit for graphical display, and other relevant properties like GPS coordinates, reading frequency, and a unique ID.
+        // This data is essential for integrating these meters into the system, allowing for the storage, processing, and visualization
+        // of their readings in the application.
+
+        
+        name: 'CO₂ Emissions Meter',
+        unit: 'kg CO₂', 
+        defaultGraphicUnit: 'kg CO₂',
+        displayable: true, 
+        gps: undefined,
+        note: 'Meter measuring CO₂ emissions in kilograms',
+        file: 'test/web/readingsData/readings_ri_15_days_75.csv', 
+        deleteFile: false, 
+        readingFrequency: '15 minutes', 
+        id: METER_ID
     }
 ];
 
@@ -276,6 +305,8 @@ module.exports = {
     conversionDatakWh,
     meterDatakWh,
     // Tony: Added the following unit and conversion data for handling new units and conversions.
-    unitDataKg, // New unit data for kilograms
-    conversionDataKg, // New conversion data for kilograms and CO₂
+    meterDataCO2, // New meter data CO₂
+    unitDataCO2, // New unit data for CO₂
+    conversionDataCO2, // New conversion data for CO₂
 };
+
