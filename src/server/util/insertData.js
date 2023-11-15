@@ -175,7 +175,7 @@ async function insertStandardUnits(conn) {
 			note: 'OED created meter unit'
 		},
 		// Tony: Added units from DesignDocs
-		{ 	// U10 This was already present in the code, so I commented it out.
+		{ 	// Tony: U10 This was already present in the code, so I commented it out.
 			/*
 			name: 'kg', 
 			identifier: '', 
@@ -189,7 +189,8 @@ async function insertStandardUnits(conn) {
    			*/
 		},
 		{ // U11
-			
+			// Tony: U11 is already presetn in the code, so I commented it out.
+			/*
 			name: 'metric ton', 
 			identifier: '', 
 			unitRepresent: Unit.unitRepresentType.QUANTITY, 
@@ -198,6 +199,7 @@ async function insertStandardUnits(conn) {
 			suffix: '', displayable: Unit.displayableType.ALL, 
 			preferredDisplay: false, 
 			note: 'OED created standard unit' 
+			*/
 		},
 
 		{ 	// U12
