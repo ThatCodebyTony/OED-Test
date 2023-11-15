@@ -121,8 +121,10 @@ mocha.describe('readings API', () => {
                 
                < mocha.it('B12: Testing 15-minute interval readings over a 75-day period for consistency and accuracy in kg of CO₂ units.', async () => {
                     // Load the data into the database
-                    await prepareTest(unitDataCO2, conversionDataCO2, meterDataCO2); // Tony: Changed the parameters to reflect that we're measuring CO₂
-																				     // These arrays can be found in src/server/util/readingsUtils.js
+
+		    // Tony: Changed the parameters to reflect that we're measuring CO₂.
+		    // These arrays can be found in src/server/util/readingsUtils.js
+                    await prepareTest(unitDataCO2, conversionDataCO2, meterDataCO2); 																	     
 
                     // Get the unit ID since the DB could use any value.
                     const unitId = await getUnitId('kg CO₂'); // Tony: changed to "kg CO₂'
