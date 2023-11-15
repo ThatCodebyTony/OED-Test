@@ -16,7 +16,12 @@ const { prepareTest,
     METER_ID,
     unitDatakWh,
     conversionDatakWh,
-    meterDatakWh } = require('../../util/readingsUtils');
+    meterDatakWh, 
+    // Tony: added the utilties for CO2 below (originally I could not go to Definitions via VS code, but adding the uutilties for CO2 below made it work.
+    unitDataCO2, 
+    conversionDataCO2, 
+    meterDataCO2} = require('../../util/readingsUtils');
+
 
 mocha.describe('readings API', () => {
     mocha.describe('readings test, test if data returned by API is as expected', () => {
