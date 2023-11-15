@@ -119,7 +119,7 @@ mocha.describe('readings API', () => {
                 // Arthur: I think the "barWidthDays:" should be 1, if you look on the testing.md doc for B12, the description states 1 day bars for 15 minute intervals
                 // Arthur: If you go to test B1-B4 you can see the barWidthDays values correspond with the number stated in each of the descriptions 
                 
-               < mocha.it('B12: 75 day bars for 15 minute reading intervals and CO₂ units with +-inf start/end time & kg CO₂ as kg CO₂', async () => {
+               	mocha.it('B12: 75 day bars for 15 minute reading intervals and CO₂ units with +-inf start/end time & kg CO₂ as kg CO₂', async () => {
                     // Load the data into the database
 
 		    // Tony: Changed the parameters to reflect that we're measuring CO₂.
