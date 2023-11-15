@@ -108,14 +108,8 @@ mocha.describe('readings API', () => {
                 // Add B11 here
 
                 // Add B12 here
-                // Hi this is another test for monday.
-                // Hi it is 11/13 2023 monday I just added this comment to test the git pull request.
-                // Tony: Hi team, this is the part we wanna focus on.
-                // If you would like more details, let me know and I can walk you through everything.
 
-                // I am deleting the code as a test.
-
-                                // Tony: Copied the previous tests (B1, B2, B3, B4) and adjusted parameters to test for B12.
+                // Tony: Copied the previous tests (B1, B2, B3, B4) and adjusted parameters to test for B12.
                 // Tony: Changed the path of "const expected = await parseExpectedCsv" to the B12 csv file.
                 // Tony: Changed mocha.it to describe the time interval, period, and "graphic unit" being tested.
                     // Tony: While B1-to-B4 test for kWh as kWh, B12 tests for kg of CO₂.
@@ -127,9 +121,11 @@ mocha.describe('readings API', () => {
                 
                < mocha.it('B12: Testing 15-minute interval readings over a 75-day period for consistency and accuracy in kg of CO₂ units.', async () => {
                     // Load the data into the database
-                    await prepareTest(unitDatakWh, conversionDatakWh, meterDatakWh);
+                    await prepareTest(unitDataCO2, conversionDataCO2, meterDataCO2); // Tony: Changed the parameters to reflect that we're measuring CO₂
+																				     // These arrays can be found in src/server/util/readingsUtils.js
+
                     // Get the unit ID since the DB could use any value.
-                    const unitId = await getUnitId('Electric_Utility');
+                    const unitId = await getUnitId('kg CO₂'); // Tony: changed to "kg CO₂'
                     // Load the expected response data from the corresponding csv file
                     const expected = await parseExpectedCsv('src/server/test/web/readingsData/expected_bar_ri_15_mu_kWh_gu_kgCO2_st_-inf_et_inf_bd_1.csv');
                     // Create a request to the API with specific parameters for B12 and save the response
