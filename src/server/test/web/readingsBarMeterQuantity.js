@@ -134,6 +134,7 @@ mocha.describe('readings API', () => {
                     // Get the unit ID since the DB could use any value.
                     const unitId = await getUnitId('kg CO₂'); // Tony: changed to "kg CO₂'
                     // Load the expected response data from the corresponding csv file
+		    const unitId = await getUnitId('Electric_Utility');
                     const expected = await parseExpectedCsv('src/server/test/web/readingsData/expected_bar_ri_15_mu_kWh_gu_kgCO2_st_-inf_et_inf_bd_1.csv');
                     // Create a request to the API with specific parameters for B12 and save the response
                     const res = await chai.request(app).get(`/api/unitReadings/bar/meters/${METER_ID}`)
